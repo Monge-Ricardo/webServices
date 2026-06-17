@@ -4,7 +4,7 @@ const cors = require('cors');
 const path = require('path');
 require('dotenv').config({ path: path.join(__dirname, '.env') });
 
-const customerRoutes = require('./routes/CustomerRoutes');
+const microphoneRoutes = require('./routes/MicrophoneRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 4001;
@@ -18,8 +18,8 @@ mongoose.connect(MONGODB_URI)
   .then(() => console.log('backendCRUD connected to MongoDB Atlas'))
   .catch(err => console.error('MongoDB connection error in backendCRUD:', err));
 
-// Montar rutas RESTful de clientes
-app.use('/computerstore/customer', customerRoutes);
+// Montar rutas de micrófonos para la tienda songsyou
+app.use('/songsyou/microphones', microphoneRoutes);
 
 app.listen(PORT, () => {
   console.log(`backendCRUD running on port ${PORT}`);

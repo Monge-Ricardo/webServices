@@ -1,0 +1,11 @@
+# Ignorar absolutamente todo
+*
+
+# Permitir que Git lea los directorios (necesario para encontrar los archivos dentro)
+!*/
+
+# Excepciones: NO ignorar los archivos .zip
+!*.zip
+
+# Excepciones: NO ignorar este propio archivo .gitignore
+!.gitignore
